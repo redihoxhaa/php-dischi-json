@@ -12,52 +12,81 @@
 
 <body>
     <div id="app">
-        <div class="container px-xl-5">
-            <div class="logo py-5">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Tidal_%28service%29_logo.svg" alt="Tidal Logo">
-            </div>
-            <ul class="discs row">
-                <li v-for="(disc, index) in discs" class="col-6 col-xl-4 mb-5 d-flex flex-column align-items-center">
-                    <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(index)">
-                        <div class="cover">
-                            <img :src="disc.cover" :alt="`${disc.title} cover`">
-                        </div>
-                    </button>
-                    <h4 class="text-center mt-3">{{disc.title}}</h4>
-                    <p class="text-center">{{disc.author}}</p>
+        <div class="container">
 
-                    <div class="offcanvas offcanvas-end d-flex align-items-center" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-header d-flex">
-                            <h5 class="offcanvas-title text-center" id="offcanvasRightLabel">You have to be curious!</h5>
+            <header>
 
-                        </div>
-                        <div class="offcanvas-body small">
-                            <div class="canvas-cover">
-                                <img :src="currentDisc.cover" :alt="`${currentDisc.title} cover`">
+                <!-- Logo sito -->
+                <div class="logo py-5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Tidal_%28service%29_logo.svg" alt="Tidal Logo">
+                </div>
+                <!-- /Logo sito -->
+            </header>
+
+            <main>
+                <!-- Lista CD -->
+                <ul class="discs row">
+
+                    <!-- Singolo CD -->
+                    <li v-for="(disc, index) in discs" class="col-6 col-xl-4 mb-5 d-flex flex-column align-items-center">
+
+                        <!-- Bottone CD -->
+                        <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(index)">
+                            <div class="cover">
+                                <img :src="disc.cover" :alt="`${disc.title} cover`">
                             </div>
-                            <div class="infos d-flex gap-5 mt-4">
-                                <ul class="info-type">
-                                    <li>Title</li>
-                                    <li>Author</li>
-                                    <li>Year</li>
-                                    <li>Genre</li>
-                                    <li>Streams</li>
-                                </ul>
-                                <ul class="info-value">
-                                    <li>{{currentDisc.title}}</li>
-                                    <li>{{currentDisc.author}}</li>
-                                    <li>{{currentDisc.year}}</li>
-                                    <li>{{currentDisc.genre}}</li>
-                                    <li>{{currentDisc.streams}}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                        </button>
+                        <!-- /Bottone CD -->
 
-                </li>
-            </ul>
+                        <!-- Info CD -->
+                        <h4 class="text-center mt-3">{{disc.title}}</h4>
+                        <p class="text-center">{{disc.author}}</p>
+                        <!-- /Info CD -->
+
+                        <!-- Offcanvas al click -->
+                        <div class="offcanvas offcanvas-end d-flex align-items-center" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+                            <div class="offcanvas-header d-flex">
+                                <!-- Welcome message del canvas -->
+                                <h5 class="offcanvas-title text-center" id="offcanvasRightLabel">You have to be curious!</h5>
+                                <!-- Welcome message del canvas -->
+                            </div>
+
+                            <!-- Corpo dell'offcanvas -->
+                            <div class="offcanvas-body small">
+                                <div class="canvas-cover">
+                                    <img :src="currentDisc.cover" :alt="`${currentDisc.title} cover`">
+                                </div>
+                                <div class="infos d-flex gap-5 mt-4">
+                                    <ul class="info-type">
+                                        <li>Title</li>
+                                        <li>Author</li>
+                                        <li>Year</li>
+                                        <li>Genre</li>
+                                        <li>Streams</li>
+                                    </ul>
+                                    <ul class="info-value">
+                                        <li>{{currentDisc.title}}</li>
+                                        <li>{{currentDisc.author}}</li>
+                                        <li>{{currentDisc.year}}</li>
+                                        <li>{{currentDisc.genre}}</li>
+                                        <li>{{currentDisc.streams}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /Corpo dell'offcanvas -->
+
+                        </div>
+                        <!-- /Offcanvas al click -->
+
+                    </li>
+                    <!-- /Singolo CD -->
+
+                </ul>
+                <!-- /Lista CD -->
+            </main>
+
         </div>
-
     </div>
 </body>
 

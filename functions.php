@@ -1,5 +1,6 @@
 <?php
 
+// Funzione per creare json da array filtrato
 function discAPIMaker($id, $array)
 {
     $single_disc = array_filter($array, fn ($disc) => $disc["id"] === $id);

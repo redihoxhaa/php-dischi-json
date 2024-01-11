@@ -1,9 +1,4 @@
-body {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 48%, rgba(254, 170, 201, 1) 100%);
-    height: 100vh;
-}
-
+/* RESET */
 ul {
     margin: 0;
     padding: 0;
@@ -15,32 +10,44 @@ li {
     padding: 0;
 }
 
-
-.cover {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.5s;
-}
-
-.cover:hover {
-    filter: brightness(1.05);
-    transform: scale(1.02);
-}
-
 img {
     width: 100%;
     display: block;
 }
+
+/* STILE */
+
+body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 48%, rgba(254, 170, 201, 1) 100%);
+    height: 100vh;
+}
+
+/* HEADER */
 
 .logo {
     width: 200px;
     margin: 0 auto;
 }
 
+/* MAIN */
+
+.cover {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+
 .cover-btn {
     all: unset;
     width: 65%;
+    transition: all 0.5s;
+}
+
+.cover-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
 }
 
 .canvas-cover {
@@ -71,6 +78,8 @@ img {
     text-transform: uppercase;
     color: gray;
 }
+
+/* MEDIA QUERIES */
 
 @media only screen and (max-width: 1199px) {
     .cover-btn {

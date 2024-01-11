@@ -11,10 +11,3 @@ $current_disc_id = file_get_contents('php://input');
 if (isset($current_disc_id)) {
     discAPIMaker($current_disc_id, $discs);
 }
-
-
-
-
-
-// header('Content-Type: application/json');
-// echo json_encode($todos);
