@@ -18,7 +18,7 @@
             </div>
             <ul class="discs row">
                 <li v-for="(disc, index) in discs" class="col-6 col-xl-4 mb-5 d-flex flex-column align-items-center">
-                    <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(index);getCurrentDisc()">
+                    <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(index)">
                         <div class="cover">
                             <img :src="disc.cover" :alt="`${disc.title} cover`">
                         </div>
