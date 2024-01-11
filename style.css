@@ -1,0 +1,42 @@
+body {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 48%, rgba(254, 170, 201, 1) 100%);
+    height: 100vh;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.cover {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.cover:hover {
+    filter: brightness(1.05);
+    transform: scale(1.02);
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.logo {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.cover-btn {
+    all: unset;
+}

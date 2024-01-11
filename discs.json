@@ -1,0 +1,56 @@
+[
+    {
+        "id": "0",
+        "title": "greedy",
+        "author": "Tate McRae",
+        "year": "2023",
+        "genre": "Pop",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/23/07/92/23079247-25be-3098-ef53-78e7d0fe7406/196871341653.jpg/600x600bb.jpg",
+        "streams": "5,005,766"
+    },
+    {
+        "id": "1",
+        "title": "La Diabla",
+        "author": "Xavi",
+        "year": "2023",
+        "genre": "Corrido, Mariachi",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/4e/ea/1a/4eea1a32-181f-eb3f-5253-ea405b1cf030/196922729812_Cover.jpg/600x600bb.jpg",
+        "streams": "4,947,419"
+    },
+    {
+        "id": "2",
+        "title": "Lovin On Me",
+        "author": "Jack Harlow",
+        "year": "2023",
+        "genre": "Club",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c1/95/0e/c1950e0a-3fc8-83c2-8913-a14dd33bfe62/075679664990.jpg/600x600bb.jpg",
+        "streams": "4,643,043"
+    },
+    {
+        "id": "3",
+        "title": "Cruel Summer",
+        "author": "Taylor Swift",
+        "year": "2023",
+        "genre": "Pop",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/35/89/30/3589300f-52f6-45b6-a381-e6472eab857c/19UMGIM53909.rgb.jpg/600x600bb.jpg",
+        "streams": "4,114,241"
+    },
+    {
+        "id": "4",
+        "title": "My Love Mine All Mine",
+        "author": "Mitski",
+        "year": "2023",
+        "genre": "Indie",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8f/4b/40/8f4b4044-d02b-dc25-7d01-7d9d225fdce4/40240.jpg/600x600bb.jpg",
+        "streams": "4,074,827"
+    },
+    {
+        "id": "5",
+        "title": "One Of The Girls",
+        "author": "The Weeknd, JENNIE, Lily-Rose Depp",
+        "year": "2023",
+        "genre": "R&B",
+        "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/db/28/e7/db28e7c3-f53a-76c8-eaa4-d92a22e4f160/23UMGIM72115.rgb.jpg/600x600bb.jpg",
+        "streams": "4,009,160"
+    }
+]

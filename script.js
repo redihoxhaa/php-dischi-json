@@ -3,7 +3,17 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            message: 'Hello Vue!'
+            discs: []
         }
+    },
+    methods: {
+        getDiscs() {
+            axios.get('discs.json').then(response => {
+                this.discs = response.data;
+            })
+        }
+    },
+    mounted() {
+        this.getDiscs();
     }
 }).mount('#app')
