@@ -15,6 +15,7 @@ li {
     padding: 0;
 }
 
+
 .cover {
     width: 100%;
     border-radius: 10px;
@@ -39,4 +40,40 @@ img {
 
 .cover-btn {
     all: unset;
+    width: 65%;
+}
+
+.canvas-cover {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#offcanvasRight {
+    width: 60vh;
+    top: 70px;
+    border-radius: 20px 0 0 20px;
+    padding: 40px;
+    height: fit-content;
+}
+
+.offcanvas-title {
+    flex-grow: 1;
+    letter-spacing: 5px;
+}
+
+.infos {
+    font-size: 20px;
+}
+
+.info-type {
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: gray;
+}
+
+@media only screen and (max-width: 1199px) {
+    .cover-btn {
+        width: 100%;
+    }
 }
