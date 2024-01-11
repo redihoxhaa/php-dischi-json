@@ -19,15 +19,17 @@ createApp({
         // Funzione per inoltrare l'ID del disco al server e ricevere il json filtrato
         sendDiscID(index) {
             const currentDiscID = this.discs[index].id;
-            console.log(currentDiscID);
-            axios.post('server.php', currentDiscID)
+            axios.post('server.php', {
+                currentDiscID: currentDiscID
+            })
                 .then(response => {
-                    axios.get('currentDisc.json').then(response => {
-                        if (response.status === 200) {
-                            this.currentDisc = response.data;
-                            console.log(response.data)
-                        }
-                    })
+                    if (response.status === 200) {
+                        axios.get('currentDisc.json').then(response => {
+                            if (response.status === 200) {
+                                this.currentDisc = response.data;
+                            }
+                        })
+                    }
                 });
         },
 

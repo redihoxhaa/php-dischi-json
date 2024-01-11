@@ -6,7 +6,8 @@ $database = file_get_contents(__DIR__ . '/discs.json');
 
 $discs = json_decode($database, true);
 
-$current_disc_id = file_get_contents('php://input');
+$payload = json_decode(file_get_contents('php://input'), true);
+$current_disc_id = $payload["currentDiscID"];
 
 if (isset($current_disc_id)) {
     discAPIMaker($current_disc_id, $discs);
