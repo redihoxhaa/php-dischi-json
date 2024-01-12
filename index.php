@@ -28,10 +28,10 @@
                 <ul class="discs row">
 
                     <!-- Singolo CD -->
-                    <li v-for="(disc, index) in discs" class="col-6 col-xl-4 mb-5 d-flex flex-column align-items-center">
+                    <li v-for="disc in discs" class="col-6 col-xl-4 mb-5 d-flex flex-column align-items-center">
 
                         <!-- Bottone CD -->
-                        <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(index)">
+                        <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(disc.id)">
                             <div class="cover">
                                 <img :src="disc.cover" :alt="`${disc.title} cover`">
                             </div>

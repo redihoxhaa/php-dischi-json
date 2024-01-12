@@ -7,5 +7,4 @@ function discAPIMaker($id, $array)
     $first_disc = reset($single_disc);;
     header('Content-Type: application/json');
     file_put_contents('currentDisc.json', json_encode($first_disc));
-    echo $id;
 }

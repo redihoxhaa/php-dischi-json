@@ -17,8 +17,7 @@ createApp({
         },
 
         // Funzione per inoltrare l'ID del disco al server e ricevere il json filtrato
-        sendDiscID(index) {
-            const currentDiscID = this.discs[index].id;
+        sendDiscID(currentDiscID) {
             axios.post('server.php', {
                 currentDiscID: currentDiscID
             })
