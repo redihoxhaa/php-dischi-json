@@ -4,14 +4,15 @@ createApp({
     data() {
         return {
             discs: [],
-            currentDisc: {}
+            currentDisc: {},
+            appTheme: "light-theme",
         }
     },
     methods: {
 
         // Funzione per leggere il file json dei dischi
         getDiscs() {
-            axios.get('discs.json').then(response => {
+            axios.get('server.php').then(response => {
                 this.discs = response.data;
             })
         },
@@ -30,6 +31,14 @@ createApp({
                         })
                     }
                 });
+        },
+
+        changeTheme() {
+            if (this.appTheme === "light-theme") {
+                this.appTheme = "dark-theme";
+            } else {
+                this.appTheme = "light-theme";
+            }
         },
 
     },

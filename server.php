@@ -12,3 +12,10 @@ $current_disc_id = $payload["currentDiscID"];
 if (isset($current_disc_id)) {
     discAPIMaker($current_disc_id, $discs);
 }
+
+if (isset($_GET["CDTitle"])) {
+    makeNewCD($discs);
+}
+
+header('Content-Type: application/json');
+echo json_encode($discs);
