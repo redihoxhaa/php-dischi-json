@@ -36,12 +36,12 @@
 
                 </header>
 
-                <main class="d-flex flex-column justify-content-center align-items-center">
+                <main class="d-flex flex-column justify-content-center">
 
-                    <h3 class="trending-now text-uppercase ps-3">Trending Now</h3>
+                    <h3 class="trending-now text-uppercase text-center ps-3">Trending Now</h3>
 
                     <!-- Lista CD -->
-                    <ul class="discs row align-items-center scrolling-container">
+                    <ul class="discs row scrolling-container">
 
                         <!-- Singolo CD -->
 
@@ -102,42 +102,52 @@
                     </ul>
                     <!-- /Lista CD -->
 
-                    <button class="add mt-5" data-bs-toggle="modal" data-bs-target="#addCD">+</button>
+                    <button class="add my-4" data-bs-toggle="offcanvas" data-bs-target="#addCD" aria-controls="offcanvasRight">+</button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="addCD" tabindex="-1" aria-labelledby="addCDLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content p-5">
-                                <form>
-                                    <div class="mb-3">
-                                        <label for="CDTitle" class="form-label">Title</label>
-                                        <input type="text" name="CDTitle" class="form-control" id="CDTitle">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="CDAuthor" class="form-label">Author</label>
-                                        <input type="text" name="CDAuthor" class="form-control" id="CDAuthor">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="CDYear" class="form-label">Year</label>
-                                        <input type="text" name="CDYear" class="form-control" id="CDYear">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="CDGenre" class="form-label">Genre</label>
-                                        <input type="text" name="CDGenre" class="form-control" id="CDGenre">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="CDStreams" class="form-label">Streams</label>
-                                        <input type="text" name="CDStreams" class="form-control" id="CDStreams">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="CDCoverURL" class="form-label">Cover URL</label>
-                                        <input type="text" name="CDCoverURL" class="form-control" id="CDCoverURL">
-                                    </div>
-                                    <button type="submit" class="btn btn-success mt-3">Add CD</button>
-                                </form>
-                            </div>
+                    <!-- Offcanvas al click -->
+                    <div class="offcanvas offcanvas-end d-flex flex-column justify-content-center px-4" tabindex="-1" id="addCD">
+
+                        <div class="offcanvas-header d-flex">
+                            <!-- Welcome message del canvas -->
+                            <h5 class="offcanvas-title text-center" id="offcanvasRightLabel">Add a new CD!</h5>
+                            <!-- Welcome message del canvas -->
                         </div>
+
+                        <!-- Corpo dell'offcanvas -->
+                        <div class="offcanvas-body small custom-canvas-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="CDTitle" class="form-label">Title</label>
+                                    <input type="text" name="CDTitle" class="form-control" id="CDTitle">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CDAuthor" class="form-label">Author</label>
+                                    <input type="text" name="CDAuthor" class="form-control" id="CDAuthor">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CDYear" class="form-label">Year</label>
+                                    <input type="text" name="CDYear" class="form-control" id="CDYear">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CDGenre" class="form-label">Genre</label>
+                                    <input type="text" name="CDGenre" class="form-control" id="CDGenre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CDStreams" class="form-label">Streams</label>
+                                    <input type="text" name="CDStreams" class="form-control" id="CDStreams">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="CDCoverURL" class="form-label">Cover URL</label>
+                                    <input type="text" name="CDCoverURL" class="form-control" id="CDCoverURL">
+                                </div>
+                                <button type="submit" class="btn btn-success mt-3">Add CD</button>
+                            </form>
+                        </div>
+                        <!-- /Corpo dell'offcanvas -->
+
                     </div>
+                    <!-- /Offcanvas al click -->
+
                 </main>
 
             </div>

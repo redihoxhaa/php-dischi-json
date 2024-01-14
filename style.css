@@ -60,7 +60,15 @@ body {
     background-color: var(--bg-primary) !important;
 }
 
-/* 
+.modal-backdrop.fade.show {
+    z-index: 4 !important;
+}
+
+.custom-canvas-body {
+    flex-grow: 0 !important;
+}
+
+/*
 ::-webkit-scrollbar-track {
     background-color: transparent;
     border-radius: 10px;
@@ -81,9 +89,8 @@ body {
 
 .wrapper {
     height: 100%;
-    background: linear-gradient(180deg, var(--bg-primary) 50%, transparent 100%);
+    background-color: var(--bg-primary);
     color: var(--bg-secondary);
-    opacity: var(--opacity);
     transition: all 0.3s ease-in-out;
 }
 
@@ -101,6 +108,12 @@ main {
     height: calc(100vh - 150px);
 }
 
+.container {
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: 5;
+}
+
 .trending-now {
     font-size: 18px;
     letter-spacing: 15px;
@@ -109,6 +122,8 @@ main {
 
 .add {
     all: unset;
+    margin: 0 auto;
+    width: fit-content;
     padding: 20px 30px;
     border-radius: 20px;
     background: #f0f0f0;
@@ -121,12 +136,11 @@ main {
 .discs {
     padding: 20px 0;
     overflow-y: auto;
-    flex-flow: row;
+
+    flex-wrap: nowrap;
 }
 
-.disc {
-    height: fit-content;
-}
+
 
 .cover {
     width: 100%;
@@ -207,8 +221,8 @@ main {
 
 .background-spinner {
     position: absolute;
-    transform: scale(25);
-    bottom: 0;
+    transform: scale(30);
+    bottom: -80vh;
     right: 48%;
     z-index: -5;
 }
@@ -217,10 +231,10 @@ main {
     background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
     width: 100px;
     height: 100px;
-    animation: spinning82341 5s linear infinite;
+    animation: spinning82341 8s linear infinite;
     text-align: center;
     border-radius: 50px;
-    filter: blur(10px);
+    filter: blur(5px);
     box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
 }
 
