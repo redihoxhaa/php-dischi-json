@@ -45,20 +45,48 @@
 
                         <!-- Singolo CD -->
 
-                        <li v-for="disc in discs" class="disc col-12 col-sm-6 col-md-4 mb-3 scroll-snap">
+                        <li v-for="(disc, index) in discs" class="disc col-12 col-sm-6 col-md-4 mb-3 scroll-snap">
 
                             <!-- Bottone CD -->
-                            <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(disc.id)">
-                                <div class="cover">
-                                    <img :src="disc.cover" :alt="`${disc.title} cover`">
+                            <div class="button-wrapper">
+                                <button class="cover-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" @click="sendDiscID(disc.id)">
+                                    <div class="cover">
+                                        <img :src="disc.cover" :alt="`${disc.title} cover`">
+                                    </div>
+                                </button>
+                                <!-- Aggiungi ai preferiti -->
+                                <div class="heart-container" title="Like">
+                                    <input type="checkbox" class="checkbox" @click.stop="handleFavs(discs[index].id)" id="Give-It-An-Id">
+                                    <div class="svg-container">
+                                        <svg viewBox="0 0 24 24" class="svg-outline" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg viewBox="0 0 24 24" class="svg-filled" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                                            </path>
+                                        </svg>
+                                        <svg class="svg-celebrate" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                                            <polygon points="10,10 20,20"></polygon>
+                                            <polygon points="10,50 20,50"></polygon>
+                                            <polygon points="20,80 30,70"></polygon>
+                                            <polygon points="90,10 80,20"></polygon>
+                                            <polygon points="90,50 80,50"></polygon>
+                                            <polygon points="80,80 70,70"></polygon>
+                                        </svg>
+                                    </div>
                                 </div>
-                            </button>
+                                <!-- Aggiungi ai preferiti -->
+                            </div>
                             <!-- /Bottone CD -->
 
                             <!-- Info CD -->
                             <h4 class="text-center mt-3">{{disc.title}}</h4>
                             <p class="text-center author">{{disc.author}}</p>
                             <!-- /Info CD -->
+
+
+
 
                             <!-- Offcanvas al click -->
                             <div class="offcanvas offcanvas-end d-flex align-items-center" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

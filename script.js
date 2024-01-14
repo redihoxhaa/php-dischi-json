@@ -84,6 +84,12 @@ createApp({
             }
         },
 
+        handleFavs(id) {
+            axios.post('server.php', {
+                favDiscID: id
+            })
+        }
+
     },
     mounted() {
         this.getDiscs();

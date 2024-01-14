@@ -34,3 +34,11 @@ function removeCD($array, $id)
     header('Content-Type: application/json');
     file_put_contents(__DIR__ . '/discs.json', json_encode($array));
 }
+
+function addFavs($array, $id)
+{
+    $payload = json_decode(file_get_contents('php://input'), true);
+    // todo
+    header('Content-Type: application/json');
+    file_put_contents(__DIR__ . '/favDiscs.json', json_encode($array));
+}
