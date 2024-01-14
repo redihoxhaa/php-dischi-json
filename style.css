@@ -247,28 +247,29 @@ main {
 
 .background-spinner {
     position: absolute;
-    transform: scale(30);
-    bottom: -150vh;
-    right: 48%;
+    /* transform: scale(30); */
+    bottom: -450vh;
+    left: 50vh;
+    transform: translate(-50%);
     z-index: -5;
 }
 
 .spinner {
     background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
-    width: 100px;
-    height: 100px;
+    width: 500vh;
+    height: 500vh;
     animation: spinning82341 8s linear infinite;
     text-align: center;
-    border-radius: 50px;
-    filter: blur(5px);
+    border-radius: 250vh;
+    filter: blur(200px);
     box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
 }
 
 .spinner1 {
     background-color: transparent;
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
+    width: 500vh;
+    height: 500vh;
+    border-radius: 125vh;
     filter: blur(20px);
 }
 
@@ -602,10 +603,14 @@ main {
     border-radius: 50%;
     height: 35px;
     width: 35px;
-    animation: rotate_3922 1.2s linear infinite;
     background-color: #9b59b6;
     background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
     cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.trending-icon:hover {
+    animation: rotate_3922 1.2s linear infinite;
 }
 
 .trending-icon span {

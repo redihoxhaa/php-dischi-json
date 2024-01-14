@@ -35,10 +35,10 @@ function removeCD($array, $id)
     file_put_contents(__DIR__ . '/discs.json', json_encode($array));
 }
 
-function addFavs($array, $id)
+function addFavs($array_to_search_in, $array_to_put_in, $id)
 {
-    $payload = json_decode(file_get_contents('php://input'), true);
-    // todo
+    $target_disc_key = array_search($id, array_column($array_to_search_in, 'id'));
+    $array_to_put_in[] = $array_to_search_in[$target_disc_key];
     header('Content-Type: application/json');
-    file_put_contents(__DIR__ . '/favDiscs.json', json_encode($array));
+    file_put_contents(__DIR__ . '/favDiscs.json', json_encode($array_to_put_in));
 }

@@ -228,7 +228,7 @@
                                             <li>{{currentDisc.streams}}</li>
                                         </ul>
                                     </div>
-                                    <button class="btn btn-danger mt-4" data-bs-dismiss="offcanvas" @click="sendTargetDiscID(currentDisc.id)">Remove CD</button>
+                                    <button class="btn btn-danger mt-4" data-bs-dismiss="offcanvas" @click="deleteDisc(currentDisc.id)">Remove CD</button>
                                 </div>
                                 <!-- /Corpo dell'offcanvas -->
 

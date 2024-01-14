@@ -28,6 +28,7 @@ createApp({
         getFavorites() {
             axios.get('favDiscs.json').then(response => {
                 this.favoriteDiscs = response.data;
+                console.log("sto cercando")
             })
         },
 
@@ -73,12 +74,13 @@ createApp({
 
         },
 
-        sendTargetDiscID(targetDiscID) {
+        deleteDisc(targetDiscID) {
             axios.post('server.php', {
                 targetDiscID: targetDiscID
             }).then(response => {
                 if (response.status === 200) {
                     this.getDiscs();
+                    this.getFavorites();
                 }
             });
 
@@ -95,7 +97,13 @@ createApp({
         handleFavs(id) {
             axios.post('server.php', {
                 favDiscID: id
-            })
+            }).then(response => {
+                if (response.status === 200) {
+                    this.getFavorites();
+                    console.log(id)
+                }
+            });
+
         },
 
         showTrending() {
@@ -109,5 +117,6 @@ createApp({
     },
     mounted() {
         this.getDiscs();
+        this.getFavorites();
     }
 }).mount('#app')
