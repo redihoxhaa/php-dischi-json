@@ -11,15 +11,26 @@ function discAPIMaker($id, $array)
 
 function makeNewCD($array)
 {
+    $payload = json_decode(file_get_contents('php://input'), true);
     $new_disc = [
         "id" => (string) rand(1000, 9999),
-        "title" => $_GET['CDTitle'],
-        "author" => $_GET['CDAuthor'],
-        "year" => $_GET['CDYear'],
-        "genre" => $_GET['CDGenre'],
-        "cover" => $_GET['CDCoverURL'],
-        "streams" => $_GET['CDStreams']
+        "title" => $payload['CDTitle'],
+        "author" => $payload['CDAuthor'],
+        "year" => $payload['CDYear'],
+        "genre" => $payload['CDGenre'],
+        "cover" => $payload['CDCoverURL'],
+        "streams" => $payload['CDStreams']
     ];
     array_unshift($array, $new_disc);
-    file_put_contents('discs.json', json_encode($array));
+    header('Content-Type: application/json');
+    file_put_contents(__DIR__ . '/discs.json', json_encode($array));
+}
+
+function removeCD($array, $id)
+{
+    $target_disc_key = array_search($id, array_column($array, 'id'));
+    unset($array[$target_disc_key]);
+    $array = array_values($array);
+    header('Content-Type: application/json');
+    file_put_contents(__DIR__ . '/discs.json', json_encode($array));
 }

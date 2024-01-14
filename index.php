@@ -90,6 +90,7 @@
                                             <li>{{currentDisc.streams}}</li>
                                         </ul>
                                     </div>
+                                    <button class="btn btn-danger mt-4" data-bs-dismiss="offcanvas" @click="sendTargetDiscID(currentDisc.id)">Remove CD</button>
                                 </div>
                                 <!-- /Corpo dell'offcanvas -->
 
@@ -115,30 +116,30 @@
 
                         <!-- Corpo dell'offcanvas -->
                         <div class="offcanvas-body small custom-canvas-body">
-                            <form>
+                            <form @submit.prevent="addNewDisc()">
                                 <div class="mb-3">
                                     <label for="CDTitle" class="form-label">Title</label>
-                                    <input type="text" name="CDTitle" class="form-control" id="CDTitle">
+                                    <input type="text" name="CDTitle" class="form-control" v-model="CDTitle">
                                 </div>
                                 <div class="mb-3">
                                     <label for="CDAuthor" class="form-label">Author</label>
-                                    <input type="text" name="CDAuthor" class="form-control" id="CDAuthor">
+                                    <input type="text" name="CDAuthor" class="form-control" v-model="CDAuthor">
                                 </div>
                                 <div class="mb-3">
                                     <label for="CDYear" class="form-label">Year</label>
-                                    <input type="text" name="CDYear" class="form-control" id="CDYear">
+                                    <input type="text" name="CDYear" class="form-control" v-model="CDYear">
                                 </div>
                                 <div class="mb-3">
                                     <label for="CDGenre" class="form-label">Genre</label>
-                                    <input type="text" name="CDGenre" class="form-control" id="CDGenre">
+                                    <input type="text" name="CDGenre" class="form-control" v-model="CDGenre">
                                 </div>
                                 <div class="mb-3">
                                     <label for="CDStreams" class="form-label">Streams</label>
-                                    <input type="text" name="CDStreams" class="form-control" id="CDStreams">
+                                    <input type="text" name="CDStreams" class="form-control" v-model="CDStreams">
                                 </div>
                                 <div class="mb-3">
                                     <label for="CDCoverURL" class="form-label">Cover URL</label>
-                                    <input type="text" name="CDCoverURL" class="form-control" id="CDCoverURL">
+                                    <input type="text" name="CDCoverURL" class="form-control" v-model="CDCoverURL">
                                 </div>
                                 <button type="submit" class="btn btn-success mt-3">Add CD</button>
                             </form>
