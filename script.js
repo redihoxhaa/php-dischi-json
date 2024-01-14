@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             discs: [],
+            favoriteDiscs: [],
             currentDisc: "",
             appTheme: "light-theme",
             CDTitle: '',
@@ -12,6 +13,7 @@ createApp({
             CDGenre: '',
             CDStreams: '',
             CDCoverURL: '',
+            showList: 'trending',
         }
     },
     methods: {
@@ -20,6 +22,12 @@ createApp({
         getDiscs() {
             axios.get('server.php').then(response => {
                 this.discs = response.data;
+            })
+        },
+
+        getFavorites() {
+            axios.get('favDiscs.json').then(response => {
+                this.favoriteDiscs = response.data;
             })
         },
 
@@ -88,7 +96,15 @@ createApp({
             axios.post('server.php', {
                 favDiscID: id
             })
-        }
+        },
+
+        showTrending() {
+            this.showList = "trending"
+        },
+
+        showFavs() {
+            this.showList = "favorites"
+        },
 
     },
     mounted() {

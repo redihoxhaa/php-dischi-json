@@ -20,6 +20,14 @@ img {
     display: block;
 }
 
+.showIt {
+    opacity: 1;
+}
+
+.hide-it {
+    opacity: 0;
+}
+
 /* STILE */
 
 body {
@@ -87,6 +95,10 @@ body {
 
 }
 
+.tools {
+    position: relative;
+}
+
 .wrapper {
     height: 100%;
     background-color: var(--bg-primary);
@@ -114,7 +126,7 @@ main {
     z-index: 5;
 }
 
-.trending-now {
+.section-title {
     font-size: 18px;
     letter-spacing: 15px;
     font-weight: 600;
@@ -130,13 +142,17 @@ main {
     box-shadow: -5px -5px 50px #ddddddc6, 5px 5px 50px #ffffffc5;
     font-size: 20px;
     font-weight: bold;
-    color: rgb(200, 200, 200)
+    color: rgb(200, 200, 200);
+    transition: transform 0.5s;
+}
+
+.add:hover {
+    transform: scale(1.1);
 }
 
 .discs {
     padding: 20px 0;
     overflow-y: auto;
-
     flex-wrap: nowrap;
 }
 
@@ -390,7 +406,7 @@ main {
 .heart-container {
     margin: 0 auto;
     --heart-color: rgb(255, 255, 255);
-    --like-color: rgb(255, 37, 77);
+    --like-color: rgb(255, 110, 110);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -400,6 +416,7 @@ main {
     transition: .3s;
     z-index: 15;
     opacity: 0;
+
 
 }
 
@@ -428,7 +445,7 @@ main {
 .heart-container .svg-filled {
     fill: var(--like-color);
     position: absolute;
-    transform: scale(1.1);
+    transform: scale(1.0);
 }
 
 .heart-container .svg-filled {
@@ -460,12 +477,11 @@ main {
     }
 
     25% {
-        transform: scale(1.3);
+        transform: scale(1.4);
     }
 
     50% {
-        transform: scale(1.1);
-        filter: brightness(1.5);
+        transform: scale(1.0);
     }
 }
 
@@ -476,12 +492,165 @@ main {
 
     50% {
         opacity: 1;
-        filter: brightness(1.5);
     }
 
     100% {
         transform: scale(1.4);
         opacity: 0;
         display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.favs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 5.5px 5px 5.5px;
+    box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: #e8e8e8;
+    border-color: #ffe2e2;
+    border-style: solid;
+    border-radius: 50%;
+    transition: transform 400ms cubic-bezier(.68, -0.55, .27, 2.5),
+        border-color 400ms ease-in-out,
+        background-color 400ms ease-in-out;
+    word-spacing: -2px;
+}
+
+@keyframes movingBorders {
+    0% {
+        border-color: #fce4e4;
+    }
+
+    50% {
+        border-color: #ffd8d8;
+    }
+
+    90% {
+        border-color: #fce4e4;
+    }
+}
+
+.favs:hover {
+    background-color: #eee;
+    transform: scale(105%);
+    animation: movingBorders 3s infinite;
+}
+
+.favs svg {
+    fill: rgb(255, 110, 110);
+    transform: scale(0.8);
+}
+
+@keyframes beatingHeart {
+    0% {
+        transform: scale(0.8);
+    }
+
+    15% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(0.8);
+    }
+
+    45% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+.favs:hover svg {
+    transform: scale(105%);
+    border-color: #ffd8d8;
+    animation: beatingHeart 1.2s infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.trending-icon {
+    position: absolute;
+    top: 50%;
+    left: -40%;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    animation: rotate_3922 1.2s linear infinite;
+    background-color: #9b59b6;
+    background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+    cursor: pointer;
+}
+
+.trending-icon span {
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: #9b59b6;
+    background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+}
+
+.trending-icon span:nth-of-type(1) {
+    filter: blur(5px);
+}
+
+.trending-icon span:nth-of-type(2) {
+    filter: blur(10px);
+}
+
+.trending-icon span:nth-of-type(3) {
+    filter: blur(25px);
+}
+
+.trending-icon span:nth-of-type(4) {
+    filter: blur(50px);
+}
+
+.trending-icon::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #fff;
+    border: solid 5px #ffffff;
+    border-radius: 50%;
+}
+
+@keyframes rotate_3922 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
