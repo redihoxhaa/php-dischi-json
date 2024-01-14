@@ -169,9 +169,10 @@ main {
     overflow: hidden;
 }
 
-#offcanvasRight {
-    width: 60vh;
-    top: 70px;
+#offcanvasRight,
+#addCD {
+    width: 30vw;
+    top: 110px;
     border-radius: 20px 0 0 20px;
     padding: 40px;
     height: fit-content;
@@ -222,7 +223,7 @@ main {
 .background-spinner {
     position: absolute;
     transform: scale(30);
-    bottom: -80vh;
+    bottom: -150vh;
     right: 48%;
     z-index: -5;
 }
@@ -293,7 +294,7 @@ main {
 .checkbox-wrapper-5 .check label {
     width: calc(2.2 * var(--size));
     height: var(--size);
-    background: #d7d7d7;
+    background: #383838;
     overflow: hidden;
 }
 
